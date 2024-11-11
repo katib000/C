@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+int main() {
+    int i, j;
+    char matrix[5][5] = { 
+        { '1', '2', '3', '4', '5' },
+        { '7', 'a', 'c', '8', 'd' },
+        { 'c', '9', '4', 'z', '8' },
+        { '5', '6', 'p', 'n', '3' },
+        { '2', '9', 't', 'm', 'k' }
+    };
+    
+    printf("Matrix before swap:\n");
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            printf("%2c ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nRows with even indices:\n");
+    for (i = 0; i < 5; i += 2) {
+        for (j = 0; j < 5; j++) {
+            printf("%2c ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nElements with even indices in each row:\n");
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j += 2) {
+            printf("%2c ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nMain diagonal:\n\n");
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            if (i == j) {
+                printf("%2c ", matrix[i][j]);
+            } else {
+                printf("   ");
+            }
+        }
+        printf("\n");
+    }
+
+    printf("\nSecondary diagonal:\n\n");
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            if (j == 4 - i) {
+                printf("%2c ", matrix[i][j]);
+            } else {
+                printf("   ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
